@@ -1,4 +1,4 @@
-package pl.lukaszsuma.jwtauthentication.exceptions;
+package pl.lukaszsuma.jwtauthentication.errors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
@@ -7,20 +7,30 @@ public enum ErrorCode {
 
     ERROR_4000(createProblemDetail("No cookies in request",
             "No cookies", HttpStatus.CONFLICT)),
+
     ERROR_4001(createProblemDetail("No required 'refreshToken' cookie in request",
             "No 'refreshToken'", HttpStatus.CONFLICT)),
+
     ERROR_4002(createProblemDetail("'refreshToken' cookie has empty value",
             "No value for 'refreshToken'", HttpStatus.CONFLICT)),
+
     ERROR_4003(createProblemDetail("No record for passed refreshToken",
             "No record in db", HttpStatus.CONFLICT)),
+
     ERROR_4004(createProblemDetail("No required 'authToken' cookie in request to generate new one",
             "No 'authToken'", HttpStatus.CONFLICT)),
+
     ERROR_4005(createProblemDetail("Cannot verify authToken signature",
             "Problem while verifying authToken", HttpStatus.CONFLICT)),
+
     ERROR_4006(createProblemDetail("username from refreshToken and authToken are not the same",
             "Usernames are different", HttpStatus.CONFLICT)),
+
     ERROR_4007(createProblemDetail("No required 'authToken' cookie in request",
-            "No 'authToken'", HttpStatus.CONFLICT));
+            "No 'authToken'", HttpStatus.CONFLICT)),
+
+    ERROR_4008(createProblemDetail("Incorrect login or password",
+            "Bad Credentials", HttpStatus.UNAUTHORIZED));
 
     private final ProblemDetail problemDetail;
 

@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
-import pl.lukaszsuma.jwtauthentication.exceptions.ErrorCode;
+import pl.lukaszsuma.jwtauthentication.errors.ErrorCode;
 
 import java.io.IOException;
 import java.text.ParseException;
